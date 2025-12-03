@@ -92,6 +92,8 @@ class MapData
         SctrData*   sector;                 // Points to (Current Map's) Sector Data Array
 
     public:
+        ~MapData();
+
         void setAll(fstream*, LumpData*);
         void setPointers(LumpData*);
         void setDataSize();
@@ -105,14 +107,6 @@ class MapData
         void printSideData();
         void printVrtxData();
         void printSctrData();
-
-        ~MapData()
-        {
-            delete [] lineDef;
-            delete [] sideDef;
-            delete [] vertex;
-            delete [] sector;
-        }
 };
 
 class DataWAD
@@ -126,6 +120,8 @@ class DataWAD
         MapData*    map;
 
     public:
+        ~DataWAD();
+
         void setAll(fstream*);
         void setAttributes(fstream*);
         void setDirectory(fstream*);
@@ -140,12 +136,6 @@ class DataWAD
         void printMapSideData(int);
         void printMapVrtxData(int);
         void printMapSctrData(int);
-
-        ~DataWAD()
-        {
-            delete [] lump;
-            delete [] map;
-        }
 };
 
 #endif // DATAWAD_H
