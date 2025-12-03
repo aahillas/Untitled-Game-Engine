@@ -12,11 +12,17 @@
 // * Class Methods (DataWAD)
 // ****************************************************************************
 
+DataWAD::~DataWAD()
+{
+    delete [] lump;
+    delete [] map;
+}
+
 void DataWAD::setAll(fstream *fileReference)
 {
-    setAttributes(fileReference);
-    setDirectory(fileReference);
-    setMapData(fileReference);
+    setAttributes( fileReference );
+    setDirectory( fileReference );
+    setMapData( fileReference );
 }
 
 void DataWAD::setAttributes(fstream *fileReference)
@@ -134,6 +140,14 @@ void DataWAD::printMapSctrData(int index)
 // ****************************************************************************
 // * Class Methods (MapData)
 // ****************************************************************************
+
+MapData::~MapData()
+{
+    delete [] lineDef;
+    delete [] sideDef;
+    delete [] vertex;
+    delete [] sector;
+}
 
 void MapData::setAll(fstream *fileReference, LumpData *lumpReference)
 {
