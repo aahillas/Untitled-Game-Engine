@@ -1,4 +1,4 @@
-// 2D Graphics Renderer
+// 2D Graphics Renderer (Prototypes)
 
 #ifndef RNDR2D_H
 #define RNDR2D_H
@@ -22,8 +22,8 @@ class Texture
     private:
         SDL_Surface* imgOriginal;               // Original Image
         SDL_Surface* imgConvert;                // Converted Image (ARGB8888)
-        Uint32*      pxlArray1D;                // Converted Image as 1-Dimensional Pixel Array
-        Uint32**     pxlArray2D;                // Converted Image as 2-Dimensional Pixel Array
+        Uint32*      pxlArray1D;                // 1-Dimensional Pixel Array (Converted Image)
+        Uint32**     pxlArray2D;                // 2-Dimensional Pixel Array (Converted Image)
         int          width;                     // Image Width
         int          height;                    // Image Height
 
